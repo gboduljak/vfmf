@@ -8,8 +8,7 @@
 </div>
 
 <div align="center">
-  <img src="./ox.svg" width="40" height="40" style="vertical-align: middle; margin-right: 8px;" />
-  <a href="https://www.robots.ox.ac.uk/~vgg/">VGG, University of Oxford</a>
+  <span><a href="https://www.robots.ox.ac.uk/~vgg/">VGG, University of Oxford</a></span>
 </div>
 
 <div align="center">
@@ -48,7 +47,7 @@
   <img src="./teaser.svg" style="vertical-align: middle; margin-right: 8px; margin-bottom: 8px;" />
 </div>
 
-**An overview of our method VFMF.** Given RGB context frames $\mathbf{I}_1,\dots,\mathbf{I}_t$, we extract DINO features $\mathbf{f}_1,\dots,\mathbf{f}_t$ and predict the next state feature $\mathbf{f}_{t + 1}$. Context features are compressed with a VAE along the channel dimension to produce context latents $\mathbf{z}_1,\dots,\mathbf{z}_t$. Those context latents are concatenated with noisy future latents $\mathbf{z}_{t+1}$ and passed to a conditional denoiser that denoises only the future latents $\mathbf{z}_{t+1}$ while leaving the context latents unchanged. This process repeats autoregressively, with a window of fixed length. Specifically, each time a new latent $\mathbf{z}_{t+1}$ is generated, it is appended to the context while the oldest context latent is popped. The denoised future latents are decoded back to DINO feature space by the VAE decoder. Finally, the reconstructed features can be routed to task-specific modality decoders for downstream tasks or interpretation.
+**An overview of our method VFMF.** Given RGB context frames $`\mathbf{I}_1,\dots,\mathbf{I}_t`$, we extract DINO features $`\mathbf{f}_1,\dots,\mathbf{f}_t`$ and predict the next state feature $`\mathbf{f}_{t+1}`$. Context features are compressed with a VAE along the channel dimension to produce context latents $`\mathbf{z}_1,\dots,\mathbf{z}_t`$. Those context latents are concatenated with noisy future latents $`\mathbf{z}_{t+1}`$ and passed to a conditional denoiser that denoises only the future latents $`\mathbf{z}_{t+1}`$ while leaving the context latents unchanged. This process repeats autoregressively, with a window of fixed length. Specifically, each time a new latent $`\mathbf{z}_{t+1}`$ is generated, it is appended to the context while the oldest context latent is popped. The denoised future latents are decoded back to DINO feature space by the VAE decoder. Finally, the reconstructed features can be routed to task-specific modality decoders for downstream tasks or interpretation.
 
 ## Instructions
 
