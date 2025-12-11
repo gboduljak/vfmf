@@ -43,7 +43,7 @@
 
 ## Method
 
-<div align="center">
+<div align="center" style="background-color=white;">
   <img src="./teaser.svg" style="vertical-align: middle; margin-right: 8px; margin-bottom: 8px;" />
 </div>
 
