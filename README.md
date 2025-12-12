@@ -1,17 +1,17 @@
 # VFMF: World Modeling by Forecasting Vision Foundation Model Features
 
-<div style="text-align: center; margin-bottom: 8px;">
-  <a href="https://gabrijel-boduljak.com/" target="_blank" rel="noopener noreferrer">Gabrijel Boduljak</a> | 
-  <a href="https://nirvanalan.github.io/" target="_blank" rel="noopener noreferrer">Yushi Lan</a> | 
-  <a href="https://chrirupp.github.io/" target="_blank" rel="noopener noreferrer">Christian Rupprecht</a> | 
+<p align="center">
+  <a href="https://gabrijel-boduljak.com/" target="_blank" rel="noopener noreferrer">Gabrijel Boduljak</a> |
+  <a href="https://nirvanalan.github.io/" target="_blank" rel="noopener noreferrer">Yushi Lan</a> |
+  <a href="https://chrirupp.github.io/" target="_blank" rel="noopener noreferrer">Christian Rupprecht</a> |
   <a href="https://www.robots.ox.ac.uk/~vedaldi/" target="_blank" rel="noopener noreferrer">Andrea Vedaldi</a>
-</div>
+</p>
 
 <div align="center">
-  <span><a href="https://www.robots.ox.ac.uk/~vgg/">VGG, University of Oxford</a></span>
+  <span><a href="https://www.robots.ox.ac.uk/~vgg/">VGG, University of Oxford</a> </span>
 </div>
 
-<div align="center">
+<div align="center" >
   <strong>Abstract</strong>
   <p align="left">
     Many recent methods forecast the world by generating stochastic
