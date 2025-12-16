@@ -64,3 +64,9 @@ CKPTS_PATH = "{absolute path to the checkpoints folder}"
 ```
 
 **More code and instructions will be released soon.**
+
+## Acknowledgements
+
+This repository is based on:
+- [DINO-Foresight](https://github.com/Sta8is/DINO-Foresight)
+- [VGGT](https://github.com/facebookresearch/vggt)
