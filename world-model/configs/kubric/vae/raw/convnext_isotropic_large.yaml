@@ -1,0 +1,21 @@
+
+objective: VAE
+name: ${vae.model.name}(${vae.objective}, beta=${vae.model.beta})
+
+model:
+  name: "raw_convnext_isotropic_large"
+  dinov2_variant: "vitb14_reg"
+  feature_stats: "/users/gabrijel/projects/vgg-wm-vae/feature_stats/kubric/movi_a/dino.npz"
+  intermediate_layers: [2, 5, 8, 11]
+  patch_size: 14
+  input_dim: 3072
+  depth: 36
+  dim: 1024
+  latent_channels: 16
+  drop_path_rate: 0
+  layer_scale_init_value: 0
+  shape: [16, 16]
+  beta: 0
+
+ckpt_path: /work/gabrijel/vfmf-checkpoints/vae/kubric/${vae.name}/checkpoints/best.pt
+latent_dist_stats_path: /work/gabrijel/vfmf-checkpoints/feature_stats/kubric/movi_a/${vae.name}.npz

@@ -1,0 +1,9 @@
+defaults:
+  - model: autoregressive_dino_foresight_pca
+  - training: dino_foresight
+  - transforms: dino_foresight
+  - data: movi_a
+  - _self_
+objective: CFM
+name: autoregressive_dino_foresight_pca(${objective})
+experiment_path: /scratch/shared/beegfs/gabrijel/experiments/vgg-wm/autoregressive_dino_foresight_pca

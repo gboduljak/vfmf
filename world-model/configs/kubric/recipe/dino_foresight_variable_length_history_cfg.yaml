@@ -1,0 +1,4 @@
+name: "dino_foresight_variable_length_history_cfg"
+min_sequence_length: 2
+max_sequence_length: 5
+history_dropout_probability: 0.2

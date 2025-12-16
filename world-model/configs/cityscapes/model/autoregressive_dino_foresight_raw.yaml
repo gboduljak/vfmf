@@ -1,0 +1,16 @@
+dinov2_variant: "vitb14_reg"
+feature_stats: "/users/gabrijel/projects/vgg-wm/stats/cityscapes/224x448/dino_dist.npz"
+intermediate_layers: [2, 5, 8, 11]
+sequence_length: 5
+img_size: [224, 448]
+patch_size: 14
+separable_attention: True
+separable_window_size: 1
+# hidden_dim: 384
+# heads: 6
+# layers: 6
+layers: 12
+heads: 8
+input_dim: 3072
+hidden_dim: 1152
+dropout: 0.1

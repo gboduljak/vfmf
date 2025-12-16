@@ -1,0 +1,10 @@
+defaults:
+  - model: autoregressive_dino_foresight_with_normalization
+  - training: dino_foresight_3x_accum_2x
+  - transforms: dino_foresight
+  - data: movi_a
+  - recipe: dino_foresight_variable_length
+  - _self_
+objective: CFM
+name: autoregressive_dino_foresight_varlength_feat_norm(${objective})
+experiment_path: /scratch/shared/beegfs/gabrijel/experiments/vgg-wm/autoregressive_dino_foresight

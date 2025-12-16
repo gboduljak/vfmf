@@ -1,0 +1,11 @@
+defaults:
+  - model: autoregressive_dino_foresight_latent
+  - vae: raw/convnext_isotropic_large
+  - training: dino_foresight_3x_accum_2x
+  - transforms: dino_foresight
+  - recipe: dino_foresight_variable_length
+  - data: movi_a
+  - _self_
+objective: CFM
+name: autoregressive_dino_foresight_latent(${objective}, vae=${vae.name}, variable_length)
+experiment_path: /scratch/shared/beegfs/gabrijel/experiments/vgg-wm/${name}

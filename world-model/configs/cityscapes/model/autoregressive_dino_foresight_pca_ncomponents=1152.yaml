@@ -1,0 +1,16 @@
+dinov2_variant: "vitb14_reg" 
+pca_ckpt: "/work/gabrijel/experiments/dino-foresight/pcas/cityscapes/ncomponents=1152/dinov2_pca_448_l[2_5_8_11]_1152.pth"
+pca_stats: "/work/gabrijel/experiments/dino-foresight/pcas/cityscapes/ncomponents=1152/pca_dist_stats.npz"
+intermediate_layers: [2, 5, 8, 11]
+sequence_length: 5
+img_size: [224, 448]
+patch_size: 14
+separable_attention: True
+separable_window_size: 1
+# hidden_dim: 384
+# heads: 6
+# layers: 6
+layers: 12
+heads: 8
+hidden_dim: 1152
+dropout: 0.1

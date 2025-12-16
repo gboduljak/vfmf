@@ -1,0 +1,26 @@
+
+objective: VAE
+name: ${vae.model.name}(${vae.objective}, beta=${vae.model.beta})
+
+model:
+  name: "symmetric_vit_large_registers"
+  dinov2_variant: "vitb14_reg"
+  feature_stats: "/athenahomes/gabrijel/projects/vgg-wm-vae/feature_stats/cityscapes/lowres/dino.npz"
+  intermediate_layers: [2, 5, 8, 11]
+  patch_size: 14
+  num_encoder_layers: 24
+  num_decoder_layers: 24
+  heads: 16
+  input_dim: 3072
+  hidden_dim: 1024
+  mlp_dim: 4096
+  latent_channels: 16
+  dropout: 0.1
+  shape: [16, 32]
+  use_qk_norm: true
+  beta: 0
+  abs_pos_enc: true
+  num_registers: 4
+
+ckpt_path: /work/gabrijel/experiments/vgg-wm-vae/cityscapes/224x448/${vae.name}/checkpoints/best.pt
+latent_dist_stats_path: /athenahomes/gabrijel/projects/vgg-wm-vae/feature_stats/cityscapes/lowres/${vae.name}.npz

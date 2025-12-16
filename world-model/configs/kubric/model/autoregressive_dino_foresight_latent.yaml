@@ -1,0 +1,9 @@
+sequence_length: 5
+img_size: [224, 224]
+patch_size: 14
+separable_attention: True
+separable_window_size: 1
+layers: 12
+heads: 8
+hidden_dim: 1152
+dropout: 0.1

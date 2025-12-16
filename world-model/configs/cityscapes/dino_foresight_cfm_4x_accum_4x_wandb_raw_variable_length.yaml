@@ -1,0 +1,10 @@
+defaults:
+  - model: autoregressive_dino_foresight_raw
+  - training: dino_foresight_4x_accum_4x
+  - transforms: dino_foresight
+  - recipe: dino_foresight_variable_length
+  - data: cityscapes
+  - _self_
+objective: CFM
+name: autoregressive_dino_foresight_raw(${objective}, variable_length)
+experiment_path: /scratch/shared/beegfs/gabrijel/experiments/vgg-wm/cityscapes/${name}

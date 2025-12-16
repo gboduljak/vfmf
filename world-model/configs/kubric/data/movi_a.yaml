@@ -1,0 +1,3 @@
+dataset_root: /scratch/shared/beegfs/gabrijel/datasets/curated/google_kubric
+suite: movi_a
+original_resolution: 256

@@ -1,0 +1,24 @@
+# Experiment settings
+wandb: true
+seed: 123
+epochs: 2400 # num steps per epoch 118
+steps: 283200
+
+# Logging & checkpointing
+log_every_steps: 16
+ckpt_every_epochs: 100
+sample_every_epochs: 50
+evaluate_every_epochs: 25
+effective_batch_size: 64
+num_workers: 8
+
+# Optimization
+lr: 8e-5
+clip_grad_norm: 1.0
+accumulation_steps: 1
+lr_scheduler:
+  name: linear_warmup
+  warmup_steps: 18120 # 5%
+
+# Recipe
+recipe: "dino_foresight"

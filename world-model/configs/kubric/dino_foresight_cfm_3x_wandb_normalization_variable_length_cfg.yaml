@@ -1,0 +1,10 @@
+defaults:
+  - model: autoregressive_dino_foresight_pca_with_normalization
+  - training: dino_foresight_3x
+  - transforms: dino_foresight
+  - data: movi_a
+  - recipe: dino_foresight_variable_length_history_cfg
+  - _self_
+objective: CFM
+name: autoregressive_dino_foresight_pca(${objective}, 3x, wandb, normalization, variable_length, history_cfg)
+experiment_path: /scratch/shared/beegfs/gabrijel/experiments/vgg-wm/autoregressive_dino_foresight_pca
