@@ -102,7 +102,7 @@ def visualize_dino_features_pca_single_pil(
     for i, img_np in enumerate(all_images_np):
       # Create a PIL image from the numpy array and upsample it
       img_pil = Image.fromarray(img_np)
-      img_upsampled = img_pil.resize(output_size, Image.BILINEAR)
+      img_upsampled = img_pil.resize(output_size)
 
       # Calculate paste position
       x_offset = i * output_size[0]
@@ -154,53 +154,83 @@ def decode_rgb(decoder: nn.Module, f: torch.Tensor, device: torch.device):
     return images
 
 
+# Standard Cityscapes label to RGB mapping
+# Format: { label_id : (R, G, B) }
+CITYSCAPES_PALETTE = {
+    0: (128, 64, 128),   # Road
+    1: (244, 35, 232),   # Sidewalk
+    2: (70, 70, 70),     # Building
+    3: (102, 102, 156),  # Wall
+    4: (190, 153, 153),  # Fence
+    5: (153, 153, 153),  # Pole
+    6: (250, 170, 30),   # Traffic Light
+    7: (220, 220, 0),    # Traffic Sign
+    8: (107, 142, 35),   # Vegetation
+    9: (152, 251, 152),  # Terrain
+    10: (70, 130, 180),  # Sky
+    11: (220, 20, 60),   # Person
+    12: (255, 0, 0),     # Rider
+    13: (0, 0, 142),     # Car
+    14: (0, 0, 70),      # Truck
+    15: (0, 60, 100),    # Bus
+    16: (0, 80, 100),    # Train
+    17: (0, 0, 230),     # Motorcycle
+    18: (119, 11, 32)    # Bicycle
+}
+
 def segs_to_image(
     segmentation: torch.Tensor,
     colormap_name: str = 'viridis',
-    color_map: dict = None # type: ignore
+    color_map: dict = None 
 ) -> Image.Image:
     """
     Converts a 2D segmentation tensor into a PIL Image.
     
     Args:
         segmentation: 2D torch.Tensor (H, W)
-        colormap_name: str, Matplotlib colormap or 'bw'/'binary' for black & white.
+        colormap_name: str, options include 'cityscapes', 'bw', or Matplotlib maps.
         color_map: dict, Optional custom mapping {label: (r, g, b)}
     """
     if segmentation.ndim != 2:
         raise ValueError("Segmentation tensor must be 2D (H, W)")
 
-    seg_np = segmentation.cpu().numpy() # Ensure on CPU
+    seg_np = segmentation.cpu().numpy()
     h, w = seg_np.shape
 
+    # 1. Custom Dictionary Provided
     if color_map is not None:
-        # Use custom color map dictionary
         rgb = np.zeros((h, w, 3), dtype=np.uint8)
         for label, color in color_map.items():
             rgb[seg_np == label] = color
-            
+
+    # 2. Cityscapes Preset
+    elif colormap_name.lower() == 'cityscapes':
+        rgb = np.zeros((h, w, 3), dtype=np.uint8)
+        # Apply palette; default to black (0,0,0) for unknown labels
+        for label, color in CITYSCAPES_PALETTE.items():
+            rgb[seg_np == label] = color
+
+    # 3. Binary / BW Mode
     elif colormap_name in ['bw', 'binary', 'black_white']:
-        # Strict Black and White mode for binary segmentation
-        # 0 -> Black, Non-zero -> White
         rgb = np.zeros((h, w, 3), dtype=np.uint8)
         mask = seg_np > 0 
         rgb[mask] = [255, 255, 255]
-        
+
+    # 4. Matplotlib Colormaps (Dynamic)
     else:
-        # Use matplotlib colormap with dynamic normalization
         cmap = cm.get_cmap(colormap_name)
         
-        # Avoid division by zero if max is 0
         max_val = seg_np.max()
         if max_val == 0:
             normalized = seg_np.astype(float)
         else:
             normalized = seg_np.astype(float) / max_val
             
-        rgb_float = cmap(normalized)[..., :3]  # drop alpha
+        rgb_float = cmap(normalized)[..., :3]
         rgb = (rgb_float * 255).astype(np.uint8)
 
     return Image.fromarray(rgb)
+
 
 def depth_to_image(depth: torch.Tensor, colormap=True) -> Image.Image:
   assert depth.dtype == torch.uint8, "Depth tensor must be uint8"

@@ -56,12 +56,14 @@
 1. Clone this repository.
 2. Set up environment matching the specification in `environment.yml`
 3. Download [checkpoints](https://huggingface.co/Gabrijel/vfmf)
-4. Open a demo notebook, such as `world-model/kubric_demo.ipynb`
+4. Open a demo notebook. Examples are `world-model/cityscapes_demo.ipynb` and `world-model/kubric_demo.ipynb`.
 5. Fix the paths in the first notebook cell
 ```python
 REPO_PATH = "{absolute path to the repository}" 
 CKPTS_PATH = "{absolute path to the checkpoints folder}"
 ```
+
+We released Kubric and Cityscapes checkpoints and demo inference notebooks.
 
 **More code and instructions will be released soon.**
 
