@@ -1,0 +1,17 @@
+defaults:
+  - model: raw/convnext_isotropic_base
+  - training: ilsvrc
+  - transforms: ilsvrc
+  - data: ilsvrc
+  - _self_
+
+model:
+  intermediate_layers: [-1]
+  input_dim: 768
+  feature_stats: /users/gabrijel/projects/vgg-wm-vae/feature_stats/ilsvrc/lowres/dino.npz
+  latent_channels: 8
+
+name: ${model.name}(${objective}, beta=${model.beta})
+resolution: low
+objective: AE
+experiment_path: /work/gabrijel/experiments/vgg-wm-vae/ilsvrc/resolution=${resolution}

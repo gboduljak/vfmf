@@ -1,0 +1,12 @@
+name: "channel_wise_linear"
+dinov2_variant: "vitb14_reg"
+pca_ckpt: "/scratch/shared/beegfs/gabrijel/hf/dino-foresight/kubric/pca/subsample_ratio=0.33/dino_pca_224_l[2,_5,_8,_11]_1152.pth"
+pca_stats: "/scratch/shared/beegfs/gabrijel/hf/dino-foresight/kubric/pca/subsample_ratio=0.33/pca_dist_stats.npz"
+intermediate_layers: [2, 5, 8, 11]
+img_size: [224, 224]
+patch_size: 14
+
+input_dim: 1152
+latent_channels: 16
+shape: [16, 16]
+beta: 0

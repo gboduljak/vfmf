@@ -1,0 +1,8 @@
+train:
+  resize_size: [224, 224]
+  random_horizontal_flip: true
+  dinov2: true
+validation:
+  resize_size: [224, 224]
+  random_horizontal_flip: false
+  dinov2: true

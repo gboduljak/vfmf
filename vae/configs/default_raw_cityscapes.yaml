@@ -1,0 +1,12 @@
+defaults:
+  - model: raw/convnext_isotropic_base
+  - training: cityscapes_lowres_accum_2x
+  - transforms: cityscapes_lowres
+  - data: cityscapes
+  - _self_
+model:
+  feature_stats: "/athenahomes/gabrijel/projects/vgg-wm-vae/feature_stats/cityscapes/lowres/dino.npz"
+name: ${model.name}(${objective}, beta=${model.beta})
+resolution: low
+objective: AE
+experiment_path: /work/gabrijel/experiments/vgg-wm-vae/cityscapes/resolution=${resolution}

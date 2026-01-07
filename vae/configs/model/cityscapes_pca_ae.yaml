@@ -1,0 +1,3 @@
+pca_ckpt: "/work/gabrijel/experiments/dino-foresight/pcas/cityscapes/ncomponents=16/dinov2_pca_224_l[2,_5,_8,_11]_16.pth"
+pca_rank: 16
+shape: [16, 32]

@@ -1,0 +1,14 @@
+defaults:
+  - model: raw/dino_foresight_transformer_base_rgb_decoder
+  - training: rgb/cityscapes
+  - transforms: cityscapes_lowres
+  - data: cityscapes
+  - _self_
+
+model:
+  feature_stats: /users/gabrijel/projects/vgg-wm-vae/feature_stats/cityscapes/lowres/dino.npz
+  resolution: [224, 448]
+  shape: [16, 32]
+
+name: ${model.name}
+experiment_path: /scratch/shared/beegfs/gabrijel/experiments/vgg-wm-rgb/experiments/rgb/cityscapes

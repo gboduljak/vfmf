@@ -1,0 +1,2 @@
+pca_ckpt: "/scratch/shared/beegfs/gabrijel/hf/dino-foresight/kubric/pca/subsample_ratio=0.33/dino_pca_224_l[2,_5,_8,_11]_1152.pth"
+pca_rank: 1152

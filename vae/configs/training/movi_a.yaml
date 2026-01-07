@@ -1,0 +1,24 @@
+# Experiment settings
+wandb: true
+seed: 42
+epochs: 2000 # num steps per epoch 37 => 
+steps: 74000
+
+# Logging & checkpointing
+log_every_steps: 8
+ckpt_every_epochs: 50
+sample_every_epochs: 50
+evaluate_every_epochs: 25
+effective_batch_size: 256
+validation_batch_size: 32
+num_workers: 16
+
+# Optimization
+lr: 3e-4
+clip_grad_norm: 1.0
+accumulation_steps: 1
+lr_scheduler:
+  name: linear_warmup
+  warmup_steps: 3700 # 5%
+
+mixed_precision: true

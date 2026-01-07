@@ -1,0 +1,9 @@
+defaults:
+  - model: raw/dino_foresight_transformer_base
+  - training: movi_a
+  - transforms: movi_a
+  - data: movi_a
+  - _self_
+objective: AE
+name: ${model.name}(${objective}, beta=${model.beta})
+experiment_path: /scratch/shared/beegfs/gabrijel/experiments/vgg-wm-vae/kubric/${data.suite}/${name}

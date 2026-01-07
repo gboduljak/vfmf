@@ -1,0 +1,15 @@
+defaults:
+  - model: raw/dino_foresight_transformer_base_rgb_decoder
+  - training: rgb/movi_a
+  - transforms: movi_a
+  - data: movi_a
+  - _self_
+
+model:
+  feature_stats: /users/gabrijel/projects/vgg-wm-vae/feature_stats/kubric/movi_a/dino.npz
+
+vae_config_path: /users/gabrijel/projects/vgg-wm-vae/configs/model/raw/convnext_isotropic_base.yaml
+vae_ckpt_path: "/scratch/shared/beegfs/gabrijel/experiments/vgg-wm-vae/kubric/movi_a/raw_convnext_isotropic_base(VAE, beta=0.01)/raw_convnext_isotropic_base(VAE, beta=0.01)/checkpoints/best.pt"
+
+name: ${model.name}(vae)
+experiment_path: /scratch/shared/beegfs/gabrijel/experiments/vgg-wm-rgb/experiments/rgb/kubric

@@ -1,0 +1,12 @@
+defaults:
+  - model: raw/convnext_isotropic_base
+  - training: vspw_lowres_accum_2x
+  - transforms: vspw_lowres
+  - data: vspw
+  - _self_
+model:
+  feature_stats: /athenahomes/gabrijel/projects/vgg-wm-vae/feature_stats/vspw/lowres/dino.npz
+name: ${model.name}(${objective}, beta=${model.beta})
+resolution: low
+objective: AE
+experiment_path: /scratch/shared/beegfs/gabrijel/experiments/vgg-wm-vae/vspw/resolution=${resolution}/${name}

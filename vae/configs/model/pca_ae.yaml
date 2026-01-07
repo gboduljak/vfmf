@@ -1,0 +1,2 @@
+pca_ckpt: "/work/gabrijel/experiments/dino-foresight/pcas/kubric/ncomponents=16/dino_pca_224_l[2,_5,_8,_11]_16.pth"
+pca_rank: 16

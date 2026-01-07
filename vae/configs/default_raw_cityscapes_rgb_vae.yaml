@@ -1,0 +1,17 @@
+defaults:
+  - model: raw/dino_foresight_transformer_base_rgb_decoder
+  - training: rgb/cityscapes
+  - transforms: cityscapes_lowres
+  - data: cityscapes
+  - _self_
+
+model:
+  feature_stats: /users/gabrijel/projects/vgg-wm-vae/feature_stats/cityscapes/lowres/dino.npz
+  resolution: [224, 448]
+  shape: [16, 32]
+
+vae_config_path: "/users/gabrijel/projects/vgg-wm-vae/configs/model/raw/convnext_isotropic_large.yaml"
+vae_ckpt_path: "/scratch/shared/beegfs/gabrijel/experiments/vgg-wm-vae/cityscapes/resolution=low/raw_convnext_isotropic_large(VAE, beta=0.01)/raw_convnext_isotropic_large(VAE, beta=0.01)/checkpoints/best.pt"
+
+name: ${model.name}(vae)
+experiment_path: /scratch/shared/beegfs/gabrijel/experiments/vgg-wm-rgb/experiments/rgb/cityscapes

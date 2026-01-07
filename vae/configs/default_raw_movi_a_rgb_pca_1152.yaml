@@ -1,0 +1,14 @@
+defaults:
+  - model: raw/dino_foresight_transformer_base_rgb_decoder
+  - training: rgb/movi_a
+  - transforms: movi_a
+  - data: movi_a
+  - _self_
+
+model:
+  feature_stats: /users/gabrijel/projects/vgg-wm-vae/feature_stats/kubric/movi_a/dino.npz
+
+vae_config_path: /users/gabrijel/projects/vgg-wm-vae/configs/model/pca_1152_ae.yaml
+
+name: ${model.name}(pca, ncomponents={vae.pca_rank})
+experiment_path: /scratch/shared/beegfs/gabrijel/experiments/vgg-wm-rgb/experiments/rgb/kubric

@@ -1,0 +1,17 @@
+name: "dino_foresight_vit_base_rgb_decoder"
+dinov2_variant: "vitb14_reg"
+dino_intermediate_layers: [2, 5, 8, 11]
+decoder_intermediate_layers: [3, 10, 17, 23]
+resolution: [224, 224]
+patch_size: 14
+num_layers: 24
+heads: 16
+input_dim: 3072
+hidden_dim: 1152
+mlp_dim: 4096
+dropout: 0.1
+shape: [16, 16]
+use_qk_norm: true
+num_registers: 4
+
+feature_stats: "/users/gabrijel/projects/vgg-wm-vae/feature_stats/kubric/movi_a/dino.npz"

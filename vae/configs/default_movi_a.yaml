@@ -1,0 +1,9 @@
+defaults:
+  - model: dino_foresight_transformer_small
+  - training: movi_a
+  - transforms: movi_a
+  - data: movi_a
+  - _self_
+objective: AE
+name: ${model.name}(${objective})
+experiment_path: /scratch/shared/beegfs/gabrijel/experiments/vgg-wm-vae/kubric/${data.suite}/${name}
