@@ -65,6 +65,22 @@ CKPTS_PATH = "{absolute path to the checkpoints folder}"
 
 We released Kubric and Cityscapes checkpoints and demo inference notebooks.
 
+### Dataset preparation
+
+#### ImageNet
+
+Prepare dataset following instructions from [ReDi](https://github.com/zelaki/ReDi).
+
+### VAE
+
+#### Training
+
+1. Make sure you can run the inference notebooks (this ensures you have the environment set up correctly).
+2. Open VAE training script `train_imagenet_raw_convnext_base_beta=0.01.sh`.
+3. Adjust `CONFIG_PATH`, `CONFIG_NAME` and `WANDB_DIR`.
+4. Open the config file, `vae/configs/default_raw_ilsvrc_isanbard.yaml`. Adjust `data.dataset_root`, `model.feature_stats` and `experiment_path`.
+5. Execute `train_imagenet_raw_convnext_base_beta=0.01.sh`.
+
 **More code and instructions will be released soon.**
 
 ## Acknowledgements
