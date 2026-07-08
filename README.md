@@ -1,4 +1,5 @@
-# VFMF: World Modeling by Forecasting Vision Foundation Model Features
+# VFMF: Dense Forecasting by Generating Foundation Model Features
+ICML 2026
 
 <p align="center">
   <a href="https://gabrijel-boduljak.com/" target="_blank" rel="noopener noreferrer">Gabrijel Boduljak</a> |
