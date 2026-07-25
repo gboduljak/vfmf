@@ -1,5 +1,6 @@
 # VFMF: Dense Forecasting by Generating Foundation Model Features
-ICML 2026
+
+<h2 align="center">ICML 2026</h2>
 
 <p align="center">
   <a href="https://gabrijel-boduljak.com/" target="_blank" rel="noopener noreferrer">Gabrijel Boduljak</a> |
